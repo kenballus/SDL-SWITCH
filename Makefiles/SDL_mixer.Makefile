@@ -42,7 +42,7 @@ SUPPORT_MAD = false
 ARCH		:=	-march=armv8-a -mtp=soft -fPIE
 CFLAGS		:=	-g -Wall -O2 -ffast-math $(ARCH)
 CFLAGS		+=	$(INCLUDES) -DARM11 -DSWITCH -D__SWITCH__  \
-				-I$(LIBNX)/../portlibs/armv8-a/include -I$(LIBNX)/../portlibs/SWITCH/include/SDL
+				-I$(LIBNX)/../portlibs/switch/include -I$(LIBNX)/../portlibs/switch/include/SDL
 
 ifeq ($(SUPPORT_TREMOR), true)
 CFLAGS += -DWAV_MUSIC -DMOD_MUSIC -DLIBMIKMOD_MUSIC -DMP3_MAD_MUSIC -DOGG_MUSIC -DOGG_USE_TREMOR 

@@ -43,16 +43,18 @@ int SDL_SYS_CreateThread(SDL_Thread *thread, void *args)
 {
 	s32 priority = 0x2B;
 	Thread *tempThread;
+	void* stack_mem;
 	int rc=-1;
 	
 	tempThread = malloc(sizeof(Thread));
+	stack_mem = malloc(STACKSIZE); // I think this is a memory leak.
 	
 /*
 	// Set priority of new thread higher than the current thread 
 	svcGetThreadPriority(&priority, CURRENT_KTHREAD); //  0x2C is the usual priority of the main thread.
 	if(priority>0x0) priority--;
 */
-	rc = threadCreate(tempThread, ThreadEntry, args, STACKSIZE, priority, -2);
+	rc = threadCreate(tempThread, ThreadEntry, args, stack_mem, STACKSIZE, priority, -2);
 	if (R_FAILED(rc))
 	{
 		SDL_SetError("Create Thread failed");

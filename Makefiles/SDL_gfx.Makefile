@@ -22,7 +22,7 @@ INCLUDES = -I./include -I$(LIBNX)/include
 ARCH		:=	-march=armv8-a -mtp=soft -fPIE
 CFLAGS		:=	-g -Wall -O2 -ffast-math $(ARCH)
 CFLAGS		+=	$(INCLUDES) -DARM11 -DSWITCH -D__SWITCH__  \
-				-I$(LIBNX)/../portlibs/armv8-a/include -I$(LIBNX)/../portlibs/SWITCH/include/SDL
+				-I$(LIBNX)/../portlibs/switch/include -I$(LIBNX)/../portlibs/switch/include/SDL
 
 CCXXFLAGS	:=  $(CFLAGS) -fno-rtti -std=gnu++11
 ASFLAGS		:=	-g $(ARCH)

@@ -9,7 +9,7 @@ This is a fork of [nop90's SDL-SWITCH](https://github.com/Nop90-Switch/SDL-SWITC
 
 -- Stick [this file](https://raw.githubusercontent.com/switchbrew/libnx/e04f311dd4dd8c986db65693d0bce6c5abcfbb8f/nx/source/display/gfx.c) and [this file](https://raw.githubusercontent.com/switchbrew/libnx/e04f311dd4dd8c986db65693d0bce6c5abcfbb8f/nx/include/switch/display/gfx.h) in $DEVKITPRO/libnx/include/switch/display/.
 
--- Add ```#include "switch/display/gfx.h``` to the top of $DEVKITPRO/libnx/include/switch/switch.h, right before the rest of the graphics headers.
+-- Add ```#include "switch/display/gfx.h``` to $DEVKITPRO/libnx/include/switch/switch.h, right before the rest of the graphics headers.
 
 -- Run make && make install
 
